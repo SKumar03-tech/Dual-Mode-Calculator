@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #edf1f4;
+    transition: 0.5s;
+}
+
+/* Dark Mode */
+body.dark {
+    background: #1e1e1e;
+}
+
+/* Toggle Button */
+.toggleBtn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 60px;
+    height: 30px;
+    background: #edf1f4;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: inset 5px 5px 10px #c1c5c8,
+                inset -5px -5px 10px #ffffff;
+}
+
+body.dark .toggleBtn {
+    background: #333;
+    box-shadow: inset 5px 5px 10px #111,
+                inset -5px -5px 10px #444;
+}
+
+.toggleBtn::before {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 2.5px;
+    left: 2.5px;
+    border-radius: 50%;
+    background: #fff;
+    transition: 0.5s;
+}
+
+body.dark .toggleBtn::before {
+    left: 32px;
+    background: #000;
+}
+
+/* Calculator */
+.calculator {
+    padding: 20px;
+    border-radius: 20px;
+    background: #edf1f4;
+    box-shadow: 10px 10px 20px #c1c5c8,
+                -10px -10px 20px #ffffff;
+}
+
+body.dark .calculator {
+    background: #2b2b2b;
+    box-shadow: 10px 10px 20px #1a1a1a,
+                -10px -10px 20px #3c3c3c;
+}
+
+/* Buttons Grid */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 70px);
+    grid-gap: 15px;
+}
+
+.buttons h2 {
+    grid-column: span 4;
+    height: 70px;
+    line-height: 70px;
+    text-align: right;
+    padding: 0 15px;
+    font-size: 25px;
+    border-radius: 10px;
+    background: #edf1f4;
+    box-shadow: inset 5px 5px 10px #c1c5c8,
+                inset -5px -5px 10px #ffffff;
+    overflow-x: auto;
+}
+
+body.dark .buttons h2 {
+    background: #2b2b2b;
+    box-shadow: inset 5px 5px 10px #1a1a1a,
+                inset -5px -5px 10px #3c3c3c;
+    color: #fff;
+}
+
+/* Buttons */
+.buttons span {
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    background: #edf1f4;
+    box-shadow: 5px 5px 10px #c1c5c8,
+                -5px -5px 10px #ffffff;
+    user-select: none;
+    transition: 0.2s;
+}
+
+body.dark .buttons span {
+    background: #2b2b2b;
+    box-shadow: 5px 5px 10px #1a1a1a,
+                -5px -5px 10px #3c3c3c;
+    color: #fff;
+}
+
+.buttons span:active {
+    box-shadow: inset 5px 5px 10px #c1c5c8,
+                inset -5px -5px 10px #ffffff;
+}
+
+body.dark .buttons span:active {
+    box-shadow: inset 5px 5px 10px #1a1a1a,
+                inset -5px -5px 10px #3c3c3c;
+}
+
+/* Special Buttons */
+#clear {
+    grid-column: span 2;
+    background: #ff5c5c;
+    color: #fff;
+}
+
+#plus {
+    grid-row: span 2;
+    height: 135px;
+    line-height: 135px;
+}
+
+#equal {
+    background: #4caf50;
+    color: #fff;
+}
